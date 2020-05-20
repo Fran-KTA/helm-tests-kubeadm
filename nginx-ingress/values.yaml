@@ -389,7 +389,7 @@ controller:
     serviceMonitor:
       enabled: true
       additionalLabels: {}
-      namespace: ""
+      namespace: monitoring
       namespaceSelector: {}
       # Default: scrape .Release.Namespace only
       # To scrape all, use the following:
