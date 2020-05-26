@@ -636,7 +636,7 @@ kubelet:
     ## Enable scraping the kubelet over https. For requirements to enable this see
     ## https://github.com/coreos/prometheus-operator/issues/926
     ##
-    https: false
+    https: true
 
     ## Enable scraping /metrics/cadvisor from kubelet's service
     ##
@@ -725,7 +725,7 @@ kubeControllerManager:
     https: false
 
     # Skip TLS certificate validation when scraping
-    insecureSkipVerify: null
+    insecureSkipVerify: true
 
     # Name of the server to use when validating TLS certificate
     serverName: null
@@ -862,8 +862,8 @@ kubeEtcd:
     ## Scrape interval. If not set, the Prometheus default scrape interval is used.
     ##
     interval: ""
-    scheme: http
-    insecureSkipVerify: false
+    scheme: https
+    insecureSkipVerify: true
     serverName: ""
     caFile: ""
     certFile: ""

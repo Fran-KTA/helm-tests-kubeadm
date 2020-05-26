@@ -1,0 +1,54 @@
+ingress:
+  annotations: []
+  class: nginx
+  domain: kubevious.172.16.21.4.nip.io
+  enabled: true
+  labels: {}
+  staticIpName: null
+  tls: false
+  tlsSecretName: null
+kubevious:
+  cpu: 100m
+  image:
+    pullPolicy: IfNotPresent
+    repository: kubevious/kubevious
+    tag: 0.6.20
+  memory: 200Mi
+  name: kubevious
+  port: 4000
+  svcName: kubevious-svc
+mysql:
+  cpu: 50m
+  db: kubevious
+  image:
+    pullPolicy: IfNotPresent
+    repository: mysql
+    tag: 8.0.19
+  memory: 500Mi
+  name: kubevious-mysql
+  pass: ""
+  port: 3306
+  storage: 10Gi
+  storageClass: null
+  svcName: kubevious-mysql-svc
+  user: root
+parser:
+  cpu: 100m
+  image:
+    pullPolicy: IfNotPresent
+    repository: kubevious/parser
+    tag: 0.6.6
+  memory: 200Mi
+  name: kubevious-parser
+  port: 4500
+provider: none
+ui:
+  cpu: 25m
+  image:
+    pullPolicy: IfNotPresent
+    repository: kubevious/ui
+    tag: 0.6.6
+  memory: 100Mi
+  name: kubevious-ui
+  port: 3000
+  svcName: kubevious-ui-svc
